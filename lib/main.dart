@@ -1,4 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+
+import 'textveinput.dart';
 
 void main() => runApp(MyApp());
 
@@ -61,7 +65,7 @@ class _AnaEkranState extends State<AnaEkran> {
           Text('Hoşgeldiniz',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 30,
+                  fontSize: 50,
                   color: Color(0xff222831))),
           Padding(
             padding:
@@ -107,7 +111,14 @@ class _AnaEkranState extends State<AnaEkran> {
               children: [
                 Text('You are new here ? '),
                 ElevatedButton(
-                    onPressed: loginButton,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => KayitEkrani(),
+                        ),
+                      );
+                    },
                     child: Text('Sign Up'),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.white, onPrimary: Colors.blueAccent)),
@@ -118,5 +129,53 @@ class _AnaEkranState extends State<AnaEkran> {
         ],
       ),
     );
+  }
+}
+
+class KayitEkrani extends StatefulWidget {
+  @override
+  _KayitEkraniState createState() => _KayitEkraniState();
+}
+
+class _KayitEkraniState extends State<KayitEkrani> {
+  TextEditingController tEmail = TextEditingController();
+  TextEditingController tUsername = TextEditingController();
+  TextEditingController tPassword = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: SizedBox(
+          width: 600,
+          height: 400,
+          child: Container(
+            color: Colors.red,
+            child: Column(
+              children: [
+                Text(
+                  "Kayıt Ol",
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Text("Email: "),
+                    Expanded(
+                        child: TextField(
+                      controller: tEmail,
+                    ))
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                RowYeni()
+              ],
+            ),
+          )),
+    ));
   }
 }
