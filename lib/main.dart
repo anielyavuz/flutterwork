@@ -51,131 +51,106 @@ class _AnaEkranState extends State<AnaEkran> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: EdgeInsets.all(150.0),
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-        colors: [Color(0xffee9595), Color(0xffff7b54)],
-        end: Alignment.bottomCenter,
-        begin: Alignment.topCenter,
-      )),
-
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Hoşgeldiniz',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 50,
-                  color: Color(0xff222831))),
-          Padding(
-            padding:
-                EdgeInsets.only(top: 20, left: 200, bottom: 10, right: 200),
-            child: Row(
-              children: [
-                Text('Kullanıcı Adı:', style: TextStyle(fontSize: 20)),
-                SizedBox(
-                  width: 30,
-                ),
-                Flexible(
-                    child: TextField(
-                  controller: t1,
-                ))
-              ],
-            ),
+        // margin: EdgeInsets.all(150.0),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          colors: [Color(0xffee9595), Color(0xffff7b54)],
+          end: Alignment.bottomCenter,
+          begin: Alignment.topCenter,
+        )),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Hoşgeldiniz',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 50,
+                      color: Color(0xff222831))),
+            ],
           ),
-          Padding(
-            padding:
-                EdgeInsets.only(top: 20, left: 200, bottom: 10, right: 200),
-            child: Row(
-              children: [
-                Text('Şifre', style: TextStyle(fontSize: 20)),
-                SizedBox(
-                  width: 30,
-                ),
-                Flexible(
-                  child: TextField(
-                    controller: t2,
-                    enableSuggestions: false,
-                    autocorrect: false,
-                    obscureText: true,
-                  ),
-                )
-              ],
-            ),
-          ),
-          ElevatedButton(onPressed: loginButton, child: Text('Login')),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('You are new here ? '),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => KayitEkrani(),
-                        ),
-                      );
-                    },
-                    child: Text('Sign Up'),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.white, onPrimary: Colors.blueAccent)),
-                Text(' now!')
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class KayitEkrani extends StatefulWidget {
-  @override
-  _KayitEkraniState createState() => _KayitEkraniState();
-}
-
-class _KayitEkraniState extends State<KayitEkrani> {
-  TextEditingController tEmail = TextEditingController();
-  TextEditingController tUsername = TextEditingController();
-  TextEditingController tPassword = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-      child: SizedBox(
-          width: 600,
-          height: 400,
-          child: Container(
-            color: Colors.red,
-            child: Column(
-              children: [
-                Text(
-                  "Kayıt Ol",
-                  style: TextStyle(fontSize: 30),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    Text("Email: "),
-                    Expanded(
+          Row(
+            children: [
+              Expanded(
+                  flex: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Text('Kullanıcı Adı:  ', style: TextStyle(fontSize: 25)),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Text('Şifre:  ', style: TextStyle(fontSize: 25)),
+                    ],
+                  )),
+              Expanded(
+                  flex: 3,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Container(
+                        height: 35,
                         child: TextField(
-                      controller: tEmail,
-                    ))
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                RowYeni()
-              ],
-            ),
-          )),
-    ));
+                          controller: t1,
+                          enableSuggestions: false,
+                          autocorrect: false,
+                          obscureText: false,
+                          style: TextStyle(fontSize: 25),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                          height: 35,
+                          child: TextField(
+                            controller: t2,
+                            enableSuggestions: false,
+                            autocorrect: false,
+                            obscureText: true,
+                          ))
+                    ],
+                  )),
+              Expanded(
+                  flex: 2,
+                  child: SizedBox(
+                    width: 10,
+                  ))
+            ],
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(onPressed: loginButton, child: Text('Login')),
+            ],
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text('You are new here ? '),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => KayitEkrani(),
+                    ),
+                  );
+                },
+                child: Text('Sign Up'),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.white, onPrimary: Colors.blueAccent)),
+            Text(' now!')
+          ])
+        ]));
   }
 }
