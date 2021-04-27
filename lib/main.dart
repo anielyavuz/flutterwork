@@ -62,7 +62,7 @@ class _AnaEkranState extends State<AnaEkran> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Hoşgeldiniz',
+              Text('Welcome',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 50,
@@ -79,11 +79,11 @@ class _AnaEkranState extends State<AnaEkran> {
                       SizedBox(
                         height: 25,
                       ),
-                      Text('Kullanıcı Adı:  ', style: TextStyle(fontSize: 25)),
+                      Text('Username:  ', style: TextStyle(fontSize: 25)),
                       SizedBox(
                         height: 30,
                       ),
-                      Text('Şifre:  ', style: TextStyle(fontSize: 25)),
+                      Text('Password:  ', style: TextStyle(fontSize: 25)),
                     ],
                   )),
               Expanded(
@@ -142,7 +142,7 @@ class _AnaEkranState extends State<AnaEkran> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => KayitEkrani(),
+                      builder: (context) => KayitEkraniMain(),
                     ),
                   );
                 },
