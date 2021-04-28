@@ -23,14 +23,23 @@ class KayitEkrani extends StatefulWidget {
 }
 
 class _KayitEkraniState extends State<KayitEkrani> {
-  kayitOl() {
-    print("ses");
-  }
-
   TextEditingController email = TextEditingController();
   TextEditingController kullaniciAdi = TextEditingController();
   TextEditingController sifre = TextEditingController();
   TextEditingController sifreTekrar = TextEditingController();
+
+  var emailInput, usernameInput, passwordInput, passwordAgainInput;
+  kayitOl() {
+    emailInput = email.text;
+    usernameInput = kullaniciAdi.text;
+    passwordInput = sifre.text;
+    passwordAgainInput = sifreTekrar.text;
+    if (passwordInput == passwordAgainInput) {
+      print("karpuz");
+    } else {
+      print("lütfen şifrenizi kontrol ediniz");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +55,7 @@ class _KayitEkraniState extends State<KayitEkrani> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Kayıt Ol',
+              Text('Sign Up',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 50,
@@ -63,19 +72,19 @@ class _KayitEkraniState extends State<KayitEkrani> {
                       SizedBox(
                         height: 25,
                       ),
-                      Text('Username:  ', style: TextStyle(fontSize: 25)),
+                      Text('Username:  ', style: TextStyle(fontSize: 15)),
                       SizedBox(
                         height: 30,
                       ),
-                      Text('Email:  ', style: TextStyle(fontSize: 25)),
+                      Text('Email:  ', style: TextStyle(fontSize: 15)),
                       SizedBox(
                         height: 30,
                       ),
-                      Text('Password:  ', style: TextStyle(fontSize: 25)),
+                      Text('Password:  ', style: TextStyle(fontSize: 15)),
                       SizedBox(
                         height: 30,
                       ),
-                      Text('Password Again:  ', style: TextStyle(fontSize: 25)),
+                      Text('Password Again:  ', style: TextStyle(fontSize: 15)),
                     ],
                   )),
               Expanded(

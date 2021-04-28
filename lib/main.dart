@@ -79,11 +79,11 @@ class _AnaEkranState extends State<AnaEkran> {
                       SizedBox(
                         height: 25,
                       ),
-                      Text('Username:  ', style: TextStyle(fontSize: 25)),
+                      Text('Username:  ', style: TextStyle(fontSize: 15)),
                       SizedBox(
                         height: 30,
                       ),
-                      Text('Password:  ', style: TextStyle(fontSize: 25)),
+                      Text('Password:  ', style: TextStyle(fontSize: 15)),
                     ],
                   )),
               Expanded(
