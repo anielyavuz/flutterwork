@@ -64,7 +64,7 @@ class _KayitEkraniState extends State<KayitEkrani> {
           ),
           Row(
             children: [
-              Expanded(
+              Flexible(
                   flex: 2,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -87,7 +87,7 @@ class _KayitEkraniState extends State<KayitEkrani> {
                       Text('Password Again:  ', style: TextStyle(fontSize: 15)),
                     ],
                   )),
-              Expanded(
+              Flexible(
                   flex: 3,
                   child: Column(
                     children: [
@@ -139,7 +139,7 @@ class _KayitEkraniState extends State<KayitEkrani> {
                           )),
                     ],
                   )),
-              Expanded(
+              Flexible(
                   flex: 2,
                   child: SizedBox(
                     width: 10,
