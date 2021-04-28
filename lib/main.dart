@@ -19,9 +19,12 @@ class MyApp extends StatelessWidget {
 class Iskele extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    const PrimaryColor = const Color(0xFF151026);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Yeni Chat Uygulaması'),
+        backgroundColor: PrimaryColor,
+        centerTitle: true,
+        title: Text('Login'),
       ),
       body: AnaEkran(),
     );

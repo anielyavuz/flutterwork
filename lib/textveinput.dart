@@ -8,8 +8,11 @@ class KayitEkraniMain extends StatefulWidget {
 class _KayitEkraniMainState extends State<KayitEkraniMain> {
   @override
   Widget build(BuildContext context) {
+    const PrimaryColor = const Color(0xFF151026);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: PrimaryColor,
+        centerTitle: true,
         title: Text("Sign Up"),
       ),
       body: KayitEkrani(),
@@ -63,6 +66,7 @@ class _KayitEkraniState extends State<KayitEkrani> {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Flexible(
                   flex: 2,
