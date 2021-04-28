@@ -101,7 +101,7 @@ class _AnaEkranState extends State<AnaEkran> {
                           enableSuggestions: false,
                           autocorrect: false,
                           obscureText: false,
-                          style: TextStyle(fontSize: 25),
+                          style: TextStyle(fontSize: 20),
                         ),
                       ),
                       SizedBox(
@@ -110,6 +110,7 @@ class _AnaEkranState extends State<AnaEkran> {
                       Container(
                           height: 35,
                           child: TextField(
+                            style: TextStyle(fontSize: 20),
                             controller: t2,
                             enableSuggestions: false,
                             autocorrect: false,
