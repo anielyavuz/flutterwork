@@ -24,7 +24,7 @@ class Iskele extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: PrimaryColor,
         centerTitle: true,
-        title: Text('Login'),
+        title: Text('Login!'),
       ),
       body: AnaEkran(),
     );
