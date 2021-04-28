@@ -13,7 +13,7 @@ class _KayitEkraniMainState extends State<KayitEkraniMain> {
       appBar: AppBar(
         backgroundColor: PrimaryColor,
         centerTitle: true,
-        title: Text("Sign Up"),
+        title: Text("Sign Up !"),
       ),
       body: KayitEkrani(),
     );
