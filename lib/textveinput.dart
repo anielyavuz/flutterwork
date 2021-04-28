@@ -24,7 +24,7 @@ class KayitEkrani extends StatefulWidget {
 
 class _KayitEkraniState extends State<KayitEkrani> {
   kayitOl() {
-    print("test");
+    print("Mutlu");
   }
 
   TextEditingController email = TextEditingController();
