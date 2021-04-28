@@ -34,6 +34,7 @@ class AnaEkran extends StatefulWidget {
 }
 
 class _AnaEkranState extends State<AnaEkran> {
+  bool _isObscure = true;
   var kullaniciAdi, sifre;
   TextEditingController t1 = TextEditingController();
   TextEditingController t2 = TextEditingController();
@@ -112,7 +113,17 @@ class _AnaEkranState extends State<AnaEkran> {
                             controller: t2,
                             enableSuggestions: false,
                             autocorrect: false,
-                            obscureText: true,
+                            obscureText: _isObscure,
+                            decoration: InputDecoration(
+                                suffixIcon: IconButton(
+                                    icon: Icon(_isObscure
+                                        ? Icons.visibility
+                                        : Icons.visibility_off),
+                                    onPressed: () {
+                                      setState(() {
+                                        _isObscure = !_isObscure;
+                                      });
+                                    })),
                           ))
                     ],
                   )),
